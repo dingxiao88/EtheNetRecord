@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MainController">
+  <children>
+    <Label id="" alignment="CENTER" layoutX="355.0" layoutY="2.0" prefHeight="52.0" prefWidth="570.0" text="MK3以太网数据记录器" textFill="#dfdfdf">
+      <font>
+        <Font name="Arial Black" size="30.0" />
+      </font>
+    </Label>
+    <ImageView fx:id="MK3_NetLink_ImageView" fitHeight="32.0" fitWidth="32.0" layoutX="1234.0" layoutY="670.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@statusbar_message_light_white.png" />
+      </image>
+    </ImageView>
+    <Label id="" fx:id="MK3_System_Time" alignment="CENTER" layoutX="1049.0" layoutY="46.0" prefHeight="24.0" prefWidth="217.0" text="---------" textAlignment="JUSTIFY" textFill="WHITE">
+      <font>
+        <Font name="SimHei" size="16.0" />
+      </font>
+    </Label>
+    <Label id="MK3_Save_Count" fx:id="MK3_FY_Save_Count" layoutX="22.0" layoutY="553.0" prefHeight="32.0" prefWidth="195.0" text="记录数据条数:">
+      <font>
+        <Font size="16.0" fx:id="x4" />
+      </font>
+      <textFill>
+        <Color blue="0.749" green="0.749" red="0.749" fx:id="x2" />
+      </textFill>
+    </Label>
+    <Button id="MK3_Save_Clean" fx:id="MK3_FY_Save_Clean" layoutX="22.0" layoutY="589.0" mnemonicParsing="false" onAction="#Button_Pro" prefHeight="32.0" prefWidth="90.0" text="计数清零" />
+    <Label id="MK3_Save_Count" fx:id="MK3_FY_Test_Count" font="$x4" layoutX="251.0" layoutY="553.0" prefHeight="32.0" prefWidth="272.0" text="记录测试数据条数:" textFill="$x2" />
+    <Button id="MK3_Save_Clean" fx:id="MK3_FY_Test" layoutX="127.0" layoutY="588.0" mnemonicParsing="false" onAction="#Button_Pro" prefHeight="32.0" prefWidth="90.0" text="记录测试" />
+    <AnchorPane id="Label_Color3" layoutX="0.0" layoutY="78.0" prefHeight="400.0" prefWidth="1280.0">
+      <children>
+        <LineChart fx:id="LineChart_FY" animated="false" createSymbols="true" horizontalGridLinesVisible="true" horizontalZeroLineVisible="true" layoutX="0.0" legendVisible="false" prefHeight="400.0" prefWidth="639.0" verticalGridLinesVisible="true" verticalZeroLineVisible="true">
+          <xAxis>
+            <NumberAxis id="Rec_Axis_X" fx:id="Chart_FY_AxisX" autoRanging="false" forceZeroInRange="false" label="" minorTickCount="10" minorTickVisible="true" prefWidth="526.0" side="BOTTOM" tickLabelsVisible="true" tickLength="2.0" tickMarkVisible="true" tickUnit="50.0" upperBound="400.0" />
+          </xAxis>
+          <yAxis>
+            <NumberAxis id="Rec_Axis_Y" fx:id="Chart_FY_AxisY" autoRanging="true" forceZeroInRange="true" label="" lowerBound="0.0" minorTickVisible="false" side="LEFT" tickLabelsVisible="true" tickLength="2.0" tickMarkVisible="true" tickUnit="30.0" upperBound="360.0" />
+          </yAxis>
+        </LineChart>
+        <LineChart fx:id="LineChart_XH" animated="false" createSymbols="true" horizontalGridLinesVisible="true" horizontalZeroLineVisible="true" layoutX="640.0" layoutY="0.0" legendVisible="false" prefHeight="400.0" prefWidth="640.0" verticalGridLinesVisible="true" verticalZeroLineVisible="true">
+          <xAxis>
+            <NumberAxis id="Rec_Axis_X" fx:id="Chart_XH_AxisX" autoRanging="false" forceZeroInRange="false" label="" minorTickCount="10" minorTickVisible="true" prefWidth="526.0" side="BOTTOM" tickLabelsVisible="true" tickLength="2.0" tickMarkVisible="true" tickUnit="50.0" upperBound="400.0" />
+          </xAxis>
+          <yAxis>
+            <NumberAxis id="Rec_Axis_Y" fx:id="Chart_XH_AxisY" autoRanging="true" forceZeroInRange="true" label="" lowerBound="0.0" minorTickVisible="false" side="LEFT" tickLabelsVisible="true" tickLength="2.0" tickMarkVisible="true" tickUnit="30.0" upperBound="360.0" />
+          </yAxis>
+        </LineChart>
+      </children>
+    </AnchorPane>
+    <Label id="MK3_Save_Count" layoutX="725.0" layoutY="665.0" prefHeight="42.0" prefWidth="134.0" text="适配网卡名:" textFill="$x2">
+      <font>
+        <Font size="24.0" fx:id="x1" />
+      </font>
+    </Label>
+    <TextField fx:id="NetCard_Name" layoutX="859.0" layoutY="670.0" prefHeight="32.0" prefWidth="272.0" text="Realtek PCIe GBE Family Controller" />
+    <Button id="MK3_Save_Clean" fx:id="NetCard_Name_Button" layoutX="1142.0" layoutY="670.0" mnemonicParsing="false" onAction="#Button_Pro" prefHeight="32.0" prefWidth="70.0" text="确定" />
+    <Line endX="41.0" endY="96.0" layoutX="599.0" layoutY="548.0" startX="41.0" startY="-66.0">
+      <stroke>
+        <Color blue="0.318" green="0.671" red="0.169" fx:id="x3" />
+      </stroke>
+    </Line>
+    <Line endX="-441.0" endY="80.0" layoutX="442.0" layoutY="563.0" startX="835.0" startY="80.0" stroke="$x3" />
+    <Label id="MK3_Save_Count" fx:id="MK3_XH_Save_Count" font="$x4" layoutX="670.0" layoutY="553.0" prefHeight="32.0" prefWidth="195.0" text="记录数据条数:" textFill="$x2" />
+    <Button id="MK3_Save_Clean" fx:id="MK3_XH_Save_Clean" layoutX="670.0" layoutY="589.0" mnemonicParsing="false" onAction="#Button_Pro" prefHeight="32.0" prefWidth="90.0" text="计数清零" />
+    <Label id="MK3_Save_Count" fx:id="MK3_XH_Test_Count" font="$x4" layoutX="890.0" layoutY="553.0" prefHeight="32.0" prefWidth="272.0" text="记录测试数据条数:" textFill="$x2" />
+    <Button id="MK3_Save_Clean" fx:id="MK3_XH_Test" layoutX="775.0" layoutY="588.0" mnemonicParsing="false" onAction="#Button_Pro" prefHeight="32.0" prefWidth="90.0" text="记录测试" />
+    <Label id="MK3_Save_Count" layoutX="14.0" layoutY="47.0" prefHeight="32.0" prefWidth="43.0" text="俯仰" textFill="$x2">
+      <font>
+        <Font size="18.0" fx:id="x5" />
+      </font>
+    </Label>
+    <Label id="MK3_Save_Count" font="$x5" layoutX="652.0" layoutY="47.0" prefHeight="32.0" prefWidth="43.0" text="旋回" textFill="$x2" />
+    <Label id="MK3_Save_Count" fx:id="MK3_XH_InputAngel" font="$x4" layoutX="890.0" layoutY="590.0" prefHeight="32.0" prefWidth="120.0" text="输入:" textFill="$x2" />
+    <Label id="MK3_Save_Count" fx:id="MK3_XH_RealAngel" font="$x4" layoutX="1011.0" layoutY="590.0" prefHeight="32.0" prefWidth="120.0" text="复视:" textFill="$x2" />
+    <Label id="MK3_Save_Count" fx:id="MK3_XH_ErrorAngel" font="$x4" layoutX="1147.0" layoutY="590.0" prefHeight="32.0" prefWidth="120.0" text="误差:" textFill="$x2" />
+    <Label id="MK3_Save_Count" fx:id="MK3_FY_InputAngel" font="$x4" layoutX="251.0" layoutY="589.0" prefHeight="32.0" prefWidth="120.0" text="输入:" textFill="$x2" />
+    <Label id="MK3_Save_Count" fx:id="MK3_FY_RealAngel" font="$x4" layoutX="378.0" layoutY="588.0" prefHeight="32.0" prefWidth="120.0" text="复视:" textFill="$x2" />
+    <Label id="MK3_Save_Count" fx:id="MK3_FY_ErrorAngel" font="$x4" layoutX="504.0" layoutY="588.0" prefHeight="32.0" prefWidth="120.0" text="误差:" textFill="$x2" />
+    <CheckBox fx:id="MK3_SaveData_CheckBox" font="$x4" layoutX="612.0" layoutY="677.0" mnemonicParsing="false" onAction="#Button_Pro" selected="true" text="保存数据" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_InputAngel_CheckBox" layoutX="21.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="输入角" textFill="WHITE">
+      <font>
+        <Font size="12.0" fx:id="x6" />
+      </font>
+    </CheckBox>
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_RealAngel_CheckBox" font="$x6" layoutX="101.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="复视角" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_ErrorAngel_CheckBox" font="$x6" layoutX="178.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="true" text="误差角" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_pos_out_CheckBox" font="$x6" layoutX="254.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Out" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_pos_up_CheckBox" font="$x6" layoutX="331.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Up" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_uFwdSpd_CheckBox" font="$x6" layoutX="412.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="uFWdSpd" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_act12_CheckBox" font="$x6" layoutX="491.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="act12" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_Uzk_CheckBox" font="$x6" layoutX="569.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Uzk" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_Izk_CheckBox" font="$x6" layoutX="21.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Izk" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_Iu_CheckBox" font="$x6" layoutX="101.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Iu" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_Spe_Ref_CheckBox" font="$x6" layoutX="178.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="spd_Ref" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_Spe_err_CheckBox" font="$x6" layoutX="254.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="spe_err" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_id_err_CheckBox" font="$x6" layoutX="331.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="id.err" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_iq_Fbk_CheckBox" font="$x6" layoutX="412.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="iq.Fbk" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_iq_Ref_CheckBox" font="$x6" layoutX="491.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="iq.Ref" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_FY_iq_err_CheckBox" font="$x6" layoutX="569.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="iq.err" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_InputAngel_CheckBox" font="$x6" layoutX="660.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="输入角" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_RealAngel_CheckBox" font="$x6" layoutX="740.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="复视角" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_ErrorAngel_CheckBox" font="$x6" layoutX="817.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="true" text="误差角" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_pos_out_CheckBox" font="$x6" layoutX="893.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Out" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_pos_up_CheckBox" font="$x6" layoutX="970.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Up" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_uFwdSpd_CheckBox" font="$x6" layoutX="1051.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="uFWdSpd" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_act12_CheckBox" font="$x6" layoutX="1130.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="act12" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_Uzk_CheckBox" font="$x6" layoutX="1208.0" layoutY="488.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Uzk" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_Izk_CheckBox" font="$x6" layoutX="660.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Izk" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_Iu_CheckBox" font="$x6" layoutX="740.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="Iu" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_Spe_Ref_CheckBox" font="$x6" layoutX="817.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="spd_Ref" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_Spe_err_CheckBox" font="$x6" layoutX="893.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="spe_err" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_id_err_CheckBox" font="$x6" layoutX="970.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="id.err" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_iq_Fbk_CheckBox" font="$x6" layoutX="1051.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="iq.Fbk" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_iq_Ref_CheckBox" font="$x6" layoutX="1130.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="iq.Ref" textFill="WHITE" />
+    <CheckBox id="MK3_SaveData_CheckBox" fx:id="MK3_XH_iq_err_CheckBox" font="$x6" layoutX="1208.0" layoutY="515.0" mnemonicParsing="false" onAction="#Button_Pro" selected="false" text="iq.err" textFill="WHITE" />
+  </children>
+  <stylesheets>
+    <URL value="@Servo.css" />
+  </stylesheets>
+</AnchorPane>
